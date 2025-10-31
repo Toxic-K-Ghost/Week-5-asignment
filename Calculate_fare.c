@@ -1,30 +1,30 @@
 /*
 Name:Kevin kipngeno
 Reg no:PA106/G/28707/25
-Details:C function to calculate fare
-Date:20 October 2025
+Description:C function to calculate fare
 */
 #include<stdio.h>
 
-int main(){
-	
-	int fare_rate;
-	float fare,distance;
-	
-	printf("       ~>Fare calculator<~\n");
-	printf("  \n");
-	
+float fare(float distance,int fare_rate);
+void main(){
+	float result,distance,rate;
+	printf("  ~>fare calculation<~  \n");
 	printf("Enter distance:");
 	scanf("%f",&distance);
 	
-	printf("Enter fare rate per kilometer:");
-	scanf("%d",&fare_rate);
+	printf("Enter fare rate:");
+	scanf("%f",&rate);
 	
-	fare=fare_rate*distance;
-	
-	printf("Fare:ksh.%.2f",fare);
-	
+	result=fare(distance,rate);
+	printf("Total fare:ksh%.2f\n",result);
 	
 	
 	return 0;
+}
+//function discription
+float fare(float distance,int fare_rate){
+	int total_fare;
+	total_fare=distance*fare_rate;
+	
+	return total_fare;
 }
